@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: authorizemicroservice 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: authorizemicroservice
+  template:
+    metadata:
+      labels:
+        app: authorizemicroservice 
+    spec:
+      containers:
+        - name: authorizemicroservice 
+          image: authimage.azurecr.io/authorizemicroservice
+          ports:
+          - containerPort: 80
