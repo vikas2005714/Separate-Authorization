@@ -7,7 +7,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["AuthorizationMicroservice/AuthorizationMicroservice/AuthorizationMicroservice.csproj", "AuthorizationMicroservice/"]
+COPY ["AuthorizationMicroservice.csproj", "AuthorizationMicroservice/"]
 RUN dotnet restore "AuthorizationMicroservice/AuthorizationMicroservice.csproj"
 COPY . .
 WORKDIR "/src/AuthorizationMicroservice"
